@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Roam - Travel Planner App</title>
+    <meta
+      name="description"
+      content="Roam is a simple travel planner to organize trips, collaborate with friends, and keep everything in one place."
+    />
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family:
+          -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        background: #fff;
+        color: #1a1a1a;
+        line-height: 1.7;
+        font-size: 16px;
+      }
+      header {
+        border-bottom: 1px solid #e8e8e8;
+        padding: 0 24px;
+      }
+      nav {
+        max-width: 720px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 56px;
+      }
+      .logo {
+        font-weight: 700;
+        font-size: 17px;
+        text-decoration: none;
+        color: #1a1a1a;
+        letter-spacing: -0.3px;
+      }
+      nav ul {
+        list-style: none;
+        display: flex;
+        gap: 24px;
+      }
+      nav ul a {
+        text-decoration: none;
+        color: #555;
+        font-size: 14px;
+      }
+      nav ul a:hover {
+        color: #1a1a1a;
+      }
+      main {
+        max-width: 720px;
+        margin: 0 auto;
+        padding: 72px 24px 80px;
+      }
+      .eyebrow {
+        font-size: 13px;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        color: #888;
+        margin-bottom: 14px;
+      }
+      h1 {
+        font-size: 40px;
+        line-height: 1.2;
+        font-weight: 700;
+        letter-spacing: -0.6px;
+        margin-bottom: 16px;
+        max-width: 640px;
+      }
+      .subtitle {
+        color: #444;
+        font-size: 18px;
+        max-width: 620px;
+        margin-bottom: 34px;
+      }
+      .cta-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-bottom: 48px;
+      }
+      .button {
+        border: 1px solid #e0e0e0;
+        border-radius: 10px;
+        padding: 10px 14px;
+        text-decoration: none;
+        color: #1a1a1a;
+        font-size: 14px;
+        font-weight: 500;
+        transition:
+          border-color 0.15s,
+          transform 0.15s;
+      }
+      .button:hover {
+        border-color: #bfbfbf;
+        transform: translateY(-1px);
+      }
+      .button.primary {
+        border-color: #1a1a1a;
+        background: #1a1a1a;
+        color: #fff;
+      }
+      .button.primary:hover {
+        border-color: #000;
+        background: #000;
+      }
+      .card-grid {
+        display: grid;
+        gap: 14px;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        margin-bottom: 54px;
+      }
+      .card {
+        border: 1px solid #e8e8e8;
+        border-radius: 12px;
+        padding: 18px;
+      }
+      .card h2 {
+        font-size: 16px;
+        margin-bottom: 6px;
+        font-weight: 600;
+      }
+      .card p {
+        color: #555;
+        font-size: 14px;
+      }
+      .legal {
+        border-top: 1px solid #e8e8e8;
+        padding-top: 24px;
+      }
+      .legal h2 {
+        font-size: 17px;
+        font-weight: 600;
+        margin-bottom: 10px;
+      }
+      .legal p {
+        color: #555;
+        margin-bottom: 14px;
+        font-size: 15px;
+      }
+      .legal-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      .legal-links a {
+        color: #1a1a1a;
+        font-size: 14px;
+        text-decoration: none;
+        border-bottom: 1px solid #d0d0d0;
+      }
+      .legal-links a:hover {
+        border-bottom-color: #1a1a1a;
+      }
+      footer {
+        border-top: 1px solid #e8e8e8;
+        padding: 24px;
+        text-align: center;
+      }
+      footer ul {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        gap: 24px;
+        margin: 0 0 12px;
+        padding: 0;
+        flex-wrap: wrap;
+      }
+      footer ul a {
+        text-decoration: none;
+        color: #555;
+        font-size: 14px;
+      }
+      footer ul a:hover {
+        color: #1a1a1a;
+      }
+      footer p {
+        color: #aaa;
+        font-size: 13px;
+        margin: 0;
+      }
+
+      @media (max-width: 640px) {
+        h1 {
+          font-size: 32px;
+        }
+        .subtitle {
+          font-size: 16px;
+        }
+        .card-grid {
+          grid-template-columns: 1fr;
+        }
+        nav {
+          flex-wrap: wrap;
+          justify-content: center;
+          gap: 8px;
+          height: auto;
+          padding: 12px 0;
+        }
+        nav ul {
+          gap: 14px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="index.html" class="logo">Roam</a>
+        <ul>
+          <li><a href="support.html">Support</a></li>
+          <li><a href="privacy-policy.html">Privacy</a></li>
+          <li><a href="terms.html">Terms</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <p class="eyebrow">Roam app</p>
+      <h1>Plan trips clearly. Share plans easily.</h1>
+      <p class="subtitle">
+        Roam helps you build a clean itinerary, keep key details in one place,
+        and collaborate with travel companions without clutter.
+      </p>
+
+      <div class="cta-row">
+        <a class="button primary" href="support.html">Get Support</a>
+        <a class="button" href="privacy-policy.html">Privacy Policy</a>
+        <a class="button" href="terms.html">Terms of Use</a>
+      </div>
+
+      <section class="card-grid">
+        <article class="card">
+          <h2>Organized trips</h2>
+          <p>Keep dates, places, notes, and reminders in one timeline.</p>
+        </article>
+        <article class="card">
+          <h2>Shared planning</h2>
+          <p>
+            Invite friends and travel partners to plan together in real time.
+          </p>
+        </article>
+        <article class="card">
+          <h2>Fast updates</h2>
+          <p>
+            Edit itineraries quickly without losing context across trip days.
+          </p>
+        </article>
+        <article class="card">
+          <h2>Simple support</h2>
+          <p>
+            Reach us directly if something breaks or if you need assistance.
+          </p>
+        </article>
+      </section>
+
+      <section class="legal">
+        <h2>Legal and support links</h2>
+        <p>
+          These pages are provided for app-store listing requirements and user
+          transparency.
+        </p>
+        <ul class="legal-links">
+          <li><a href="privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms of Use</a></li>
+          <li><a href="support.html">Support</a></li>
+        </ul>
+      </section>
+    </main>
+
+    <footer>
+      <ul>
+        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms of Use</a></li>
+        <li><a href="support.html">Support</a></li>
+      </ul>
+      <p>&copy; 2026 Roam</p>
+    </footer>
+  </body>
+</html>
